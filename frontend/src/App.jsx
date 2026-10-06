@@ -225,15 +225,15 @@ export default function App() {
         </header>
         <main className="max-w-3xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-8">
           {Object.entries(productsByCategory).map(([catName, items]) => (
-            <div key={catName}>
-              <div className="bg-[#82b4a7] text-[#fcfaf2] px-4 py-2 font-bold text-lg mb-4 inline-block rounded-r-full shadow-sm shadow-[#82b4a7]/50 uppercase tracking-widest">
+            <div key={catName} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-gradient-to-r from-[#82b4a7] to-[#639386] text-white px-5 py-3 font-black text-lg uppercase tracking-widest shadow-inner">
                 {catName}
               </div>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col p-2">
                 {items.map(item => (
-                  <li key={item.id} className="flex justify-between items-end border-b border-dotted border-[#c4a2c8] pb-1">
+                  <li key={item.id} className="flex justify-between items-center p-3 border-b border-gray-100 last:border-0 hover:bg-[#fcfaf2] transition-colors rounded-lg">
                     <span className="font-bold text-[#4a3b32] uppercase text-sm pr-4">{item.name}</span>
-                    <span className="font-black text-[#c4a2c8] whitespace-nowrap">R$ {item.price}</span>
+                    <span className="font-black text-[#639386] bg-[#82b4a7]/10 px-3 py-1 rounded-full whitespace-nowrap">R$ {item.price}</span>
                   </li>
                 ))}
               </ul>
@@ -254,31 +254,40 @@ export default function App() {
 
   if (!token) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-        <div className="bg-white p-8 rounded-lg shadow-xl w-full max-w-sm">
-          <h1 className="text-2xl font-black text-center text-blue-600 mb-6">Comanda Digital</h1>
-          <h2 className="text-lg font-bold mb-4 text-center text-gray-700">Fazer Login</h2>
+      <div className="min-h-screen bg-gradient-to-br from-[#82b4a7] via-[#639386] to-[#4a3b32] flex items-center justify-center p-4">
+        <div className="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/30 w-full max-w-sm transform transition-all">
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 bg-[#82b4a7] rounded-full flex items-center justify-center shadow-inner">
+              <span className="text-white text-3xl">🍢</span>
+            </div>
+          </div>
+          <h1 className="text-3xl font-black text-center text-[#4a3b32] mb-1 tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>Comanda Digital</h1>
+          <h2 className="text-sm font-semibold mb-6 text-center text-[#82b4a7] uppercase tracking-widest">Acesso Restrito</h2>
 
-          {authError && <div className="bg-red-100 text-red-700 p-2 rounded mb-4 text-sm text-center font-medium">{authError}</div>}
+          {authError && <div className="bg-red-500/10 border border-red-500/20 text-red-700 p-3 rounded-lg mb-6 text-sm text-center font-bold animate-pulse">{authError}</div>}
 
-          <form onSubmit={handleAuth} className="flex flex-col gap-4">
-            <input
-              className="border p-3 rounded bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="Usuário"
-              value={authForm.username}
-              onChange={e => setAuthForm({ ...authForm, username: e.target.value })}
-              required
-            />
-            <input
-              className="border p-3 rounded bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
-              type="password"
-              placeholder="Senha"
-              value={authForm.password}
-              onChange={e => setAuthForm({ ...authForm, password: e.target.value })}
-              required
-            />
-            <button type="submit" className="bg-blue-600 text-white font-bold py-3 rounded shadow-md hover:bg-blue-700 transition-colors">
-              Entrar
+          <form onSubmit={handleAuth} className="flex flex-col gap-5">
+            <div>
+              <input
+                className="w-full bg-white/50 border border-gray-200 text-gray-800 p-4 rounded-xl focus:ring-4 focus:ring-[#82b4a7]/30 focus:border-[#82b4a7] outline-none transition-all placeholder-gray-400 font-medium"
+                placeholder="Usuário"
+                value={authForm.username}
+                onChange={e => setAuthForm({ ...authForm, username: e.target.value })}
+                required
+              />
+            </div>
+            <div>
+              <input
+                className="w-full bg-white/50 border border-gray-200 text-gray-800 p-4 rounded-xl focus:ring-4 focus:ring-[#82b4a7]/30 focus:border-[#82b4a7] outline-none transition-all placeholder-gray-400 font-medium"
+                type="password"
+                placeholder="Senha"
+                value={authForm.password}
+                onChange={e => setAuthForm({ ...authForm, password: e.target.value })}
+                required
+              />
+            </div>
+            <button type="submit" className="bg-[#4a3b32] text-white font-bold py-4 rounded-xl shadow-lg hover:bg-[#362b24] hover:shadow-xl hover:-translate-y-1 active:translate-y-0 transition-all uppercase tracking-wider text-sm mt-2">
+              Entrar no Sistema
             </button>
           </form>
         </div>
