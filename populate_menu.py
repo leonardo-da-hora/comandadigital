@@ -6,9 +6,10 @@ django.setup()
 
 from api.models import Category, Product
 
-# Clear existing products and categories if any
-Product.objects.all().delete()
-Category.objects.all().delete()
+# Only populate if database is empty
+if Product.objects.exists():
+    print("Banco de dados já contém produtos, ignorando povoamento inicial.")
+    exit(0)
 
 menu = {
     "ESPETINHOS": [
