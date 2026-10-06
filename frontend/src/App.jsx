@@ -220,7 +220,7 @@ export default function App() {
     return (
       <div className="min-h-screen bg-[#fcfaf2] text-[#4a3b32] pb-10 font-sans">
         <header className="py-8 px-4 flex flex-col items-center border-b-2 border-dotted border-[#82b4a7] mb-6">
-          <h1 className="text-4xl font-black text-[#82b4a7] tracking-wider uppercase drop-shadow-sm mb-2" style={{ fontFamily: 'Georgia, serif' }}>Comanda Digital</h1>
+          <h1 className="text-4xl font-black text-[#82b4a7] tracking-wider uppercase drop-shadow-sm mb-2" style={{ fontFamily: 'Georgia, serif' }}>Espetinho Delas</h1>
           <p className="text-[#c4a2c8] font-bold text-sm tracking-[0.2em] text-center">BOM ESPETINHO ♥ BOAS AMIGAS ♥ BONS MOMENTOS</p>
         </header>
         <main className="max-w-3xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-8">
