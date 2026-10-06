@@ -1,6 +1,6 @@
 {
-  "name": "Comanda Digital - Espetinho Delas",
-  "short_name": "Espetinho Delas",
+  "name": "Comanda Digital",
+  "short_name": "Comanda Digital",
   "description": "Sistema de Comanda e Cardápio",
   "start_url": "/",
   "display": "standalone",

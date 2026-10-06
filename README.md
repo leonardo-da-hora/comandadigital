@@ -1,4 +1,4 @@
-# Comanda Digital - Espetinho Delas 🍢
+# Comanda Digital 📱
 
 Um sistema moderno e responsivo de gestão de comandas, cardápio digital e estoque, desenvolvido especialmente para atender operações de bares, espetinhos e conveniências com agilidade.
 

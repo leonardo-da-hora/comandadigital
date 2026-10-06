@@ -65,4 +65,4 @@ for cat_name, items in menu.items():
             category=category
         )
 
-print("Cardápio 'Espetinho Delas' criado com sucesso!")
+print("Cardápio 'Comanda Digital' criado com sucesso!")
